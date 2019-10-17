@@ -1,7 +1,10 @@
 // this will hold my variables and mixins
 
-//buttons
+$font_demi_bold: 500;
+$color_primary_intense: #333666;
 
+
+// buttons
 $button_shadow: none;
 $button_font_size: 22px;
 $button_font_weight: $font_demi_bold;
@@ -13,7 +16,6 @@ $button_padding: 16px;
 $button_long_width: 269px;
 
 //colors
-
 $color_primary: #1dc7b2;
 $color_secondary_1: #c4efea;
 $color_secondary: #ebfffc;
@@ -38,3 +40,9 @@ $color_blue_light: #fbfdff;
 $color_grey_2_ultra: rgba(155, 155, 155, 0.25); // light_gray with 0.25 opacity
 $shadow_color: rgba(0, 0, 0, 0.2);
 $shadow_color_light: rgba(228, 228, 228, 0.5);
+
+p{
+    color: blue; 
+    font-size:30px;
+
+}

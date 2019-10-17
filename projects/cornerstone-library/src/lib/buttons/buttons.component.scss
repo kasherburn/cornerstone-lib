@@ -67,4 +67,8 @@ border: 1px solid $color_primary;
 &.small{
     font-size: 0.2em;
 }
+
+&.round{
+    border-radius: $button_radius;
+}
 }

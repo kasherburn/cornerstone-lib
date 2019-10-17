@@ -11,6 +11,7 @@ export class ButtonsComponent implements OnInit {
     @Input() borderstyle: string = "solid";
     @Input() width: string = "medium";
     @Input() margin: string = "";
+    @Input() radius: string = "";
     public message = "My Button";
     constructor() { }
 

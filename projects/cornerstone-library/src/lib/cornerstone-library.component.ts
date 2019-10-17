@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       cornerstone-library works!
     </p>
   `,
-  styles: []
+  styleUrls: ["./index.scss"]
 })
 export class CornerstoneLibraryComponent implements OnInit {
 

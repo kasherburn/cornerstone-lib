@@ -1,0 +1,170 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "cornerstone-library": {
+      "projectType": "library",
+      "root": "projects/cornerstone-library",
+      "sourceRoot": "projects/cornerstone-library/src",
+      "prefix": "clib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cornerstone-library/tsconfig.lib.json",
+            "project": "projects/cornerstone-library/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cornerstone-library/src/test.ts",
+            "tsConfig": "projects/cornerstone-library/tsconfig.spec.json",
+            "karmaConfig": "projects/cornerstone-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cornerstone-library/tsconfig.lib.json",
+              "projects/cornerstone-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "clib-tester": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/clib-tester",
+      "sourceRoot": "projects/clib-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/clib-tester",
+            "index": "projects/clib-tester/src/index.html",
+            "main": "projects/clib-tester/src/main.ts",
+            "polyfills": "projects/clib-tester/src/polyfills.ts",
+            "tsConfig": "projects/clib-tester/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/clib-tester/src/favicon.ico",
+              "projects/clib-tester/src/assets"
+            ],
+            "styles": [
+              "projects/clib-tester/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/clib-tester/src/environments/environment.ts",
+                  "with": "projects/clib-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "clib-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "clib-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "clib-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/clib-tester/src/test.ts",
+            "polyfills": "projects/clib-tester/src/polyfills.ts",
+            "tsConfig": "projects/clib-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/clib-tester/karma.conf.js",
+            "assets": [
+              "projects/clib-tester/src/favicon.ico",
+              "projects/clib-tester/src/assets"
+            ],
+            "styles": [
+              "projects/clib-tester/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/clib-tester/tsconfig.app.json",
+              "projects/clib-tester/tsconfig.spec.json",
+              "projects/clib-tester/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/clib-tester/e2e/protractor.conf.js",
+            "devServerTarget": "clib-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "clib-tester:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "cornerstone-library",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
+}

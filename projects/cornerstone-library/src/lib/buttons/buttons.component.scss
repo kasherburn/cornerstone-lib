@@ -1,0 +1,37 @@
+@import '../../index.scss';
+
+//BUTTON
+.b-button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: $button_font_size;
+  font-weight: $button_font_weight;
+  color: $color_white;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  min-width: $button_width;
+  height: $button_height;
+  @include border-radius($button_radius);
+  @include box-shadow($button_shadow);
+  background-color: $color_primary;
+  outline: none;
+  @include transition(0.1s);
+  border: 1px solid $color_primary;
+  padding-left: $button_padding;
+  padding-right: $button_padding;
+
+  &:active {
+    background-color: $button_active_color;
+    @include box-shadow($button_shadow);
+    @include transform(translateY(1px));
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: $color_grey_2;
+    border: 1px solid $color_grey_2;
+    opacity: 0.2;
+  }
+}

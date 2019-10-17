@@ -1,0 +1,40 @@
+// this will hold my variables and mixins
+
+//buttons
+
+$button_shadow: none;
+$button_font_size: 22px;
+$button_font_weight: $font_demi_bold;
+$button_height: 48px;
+$button_width: 139px;
+$button_radius: 6px;
+$button_active_color: $color_primary_intense;
+$button_padding: 16px;
+$button_long_width: 269px;
+
+//colors
+
+$color_primary: #1dc7b2;
+$color_secondary_1: #c4efea;
+$color_secondary: #ebfffc;
+$color_primary_intense: #1fa695;
+
+$color_grey_1: #4a4a4a;
+$color_grey_2: #9b9b9b;
+$color_grey_3: #9aa5b1;
+$color_grey_4: #d0d8e0;
+$color_grey_5: #e6e6e6;
+$color_grey_6: #f0f0f0;
+$color_grey_7: #fbfcfd;
+$color_grey_8: #f7f7f7;
+
+$color_yellow: #ffcf57;
+$color_danger: #fd6d6d;
+$color_purple: #9013fe;
+$color_white: #fff;
+
+$color_blue_light: #fbfdff;
+
+$color_grey_2_ultra: rgba(155, 155, 155, 0.25); // light_gray with 0.25 opacity
+$shadow_color: rgba(0, 0, 0, 0.2);
+$shadow_color_light: rgba(228, 228, 228, 0.5);

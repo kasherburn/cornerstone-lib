@@ -1,10 +1,15 @@
-// this will hold my variables and mixins
+/*
+import variables; // colors, theme settings
+import fonts; // all fonts, weights, headings
+import core-styles; // styles that are common to the theme and used in lots of places, could be named theme or theme1 (rebrand could be theme2 if this could make things easier/more organised for transitioning...?
+import bootstrap; // mixins unless we actually use bootstrap??
+import forms; input stylings
+*/
+$font_demi_bold: 500;// TODO this isn't correct
+$color_primary_intense: #333666; // TODO this isn't correct 
 
-$font_demi_bold: 500;
-$color_primary_intense: #333666;
 
-
-// buttons
+// buttons -> move to button component
 $button_shadow: none;
 $button_font_size: 22px;
 $button_font_weight: $font_demi_bold;
@@ -15,13 +20,15 @@ $button_active_color: $color_primary_intense;
 $button_padding: 16px;
 $button_long_width: 269px;
 
-//colors
+// colors -> move to variables
 $color_primary: #1dc7b2;
 $color_secondary_1: #c4efea;
 $color_secondary: #ebfffc;
 $color_primary_intense: #1fa695;
 
-$color_grey_1: #4a4a4a;
+$color_grey_1: #4a4a4a; 
+// do we use all of these?? 
+// Renaming numbers to names could help order being not so easily muddled when added or removed
 $color_grey_2: #9b9b9b;
 $color_grey_3: #9aa5b1;
 $color_grey_4: #d0d8e0;
@@ -41,8 +48,9 @@ $color_grey_2_ultra: rgba(155, 155, 155, 0.25); // light_gray with 0.25 opacity
 $shadow_color: rgba(0, 0, 0, 0.2);
 $shadow_color_light: rgba(228, 228, 228, 0.5);
 
+
+// base styling like this should live in  core.scss/theme.scss
 p{
     color: blue; 
     font-size:30px;
-
 }

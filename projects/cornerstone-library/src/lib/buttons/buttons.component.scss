@@ -1,4 +1,4 @@
-@import '../../index.scss';
+@import '../cornerstone-library.component.scss';
 
 //BUTTON
 .b-button {
@@ -13,19 +13,19 @@
   cursor: pointer;
   min-width: $button_width;
   height: $button_height;
-  @include border-radius($button_radius);
-  @include box-shadow($button_shadow);
+//   @include border-radius($button_radius);
+//   @include box-shadow($button_shadow);
   background-color: $color_primary;
   outline: none;
-  @include transition(0.1s);
+//   @include transition(0.1s);
   border: 1px solid $color_primary;
   padding-left: $button_padding;
   padding-right: $button_padding;
 
   &:active {
     background-color: $button_active_color;
-    @include box-shadow($button_shadow);
-    @include transform(translateY(1px));
+    // @include box-shadow($button_shadow);
+    // @include transform(translateY(1px));
   }
 
   &:disabled,

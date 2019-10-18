@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'clib-buttons',
+  selector: 'clib-button',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss']
 })
 export class ButtonsComponent implements OnInit {
 
-  constructor() { }
+    @Input() color: string = "default";
+    @Input() borderstyle: string = "solid";
+    @Input() width: string = "medium";
+    @Input() margin: string = "";
+    @Input() radius: string = "";
+    public message = "My Button";
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        console.log(this.color);
+    }
 
 }

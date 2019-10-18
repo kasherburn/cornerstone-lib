@@ -1,8 +1,7 @@
 @import '../cornerstone-library.component.scss';
 
-//BUTTON
-.b-button {
-  border: none;
+button{
+ 
   text-align: center;
   text-decoration: none;
   font-size: $button_font_size;
@@ -18,7 +17,7 @@
   background-color: $color_primary;
   outline: none;
 //   @include transition(0.1s);
-  border: 1px solid $color_primary;
+border: 1px solid $color_primary;
   padding-left: $button_padding;
   padding-right: $button_padding;
 
@@ -34,4 +33,42 @@
     border: 1px solid $color_grey_2;
     opacity: 0.2;
   }
+
+
+  &.primary { 
+   
+    background-color: $color_primary;
+}
+
+&.secondary{  
+    background-color: $color_grey_2;
+    border-color: $color_grey_2;
+}
+
+&.outline{  
+    border: solid;
+    border: 1px solid $color_primary;
+    background-color: white;
+    color : $color_primary;
+}
+
+&.full{
+    min-width: 100%;
+    width: 100%;
+}
+&.large{
+    min-width: 50%;
+    text-transform: uppercase;
+}
+&.margin-left{
+    margin-left: 100px;
+}
+
+&.small{
+    font-size: 0.2em;
+}
+
+&.round{
+    border-radius: $button_radius;
+}
 }
